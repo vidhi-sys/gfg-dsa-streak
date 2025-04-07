@@ -1,0 +1,39 @@
+//{ Driver Code Starts
+import java.io.*;
+import java.util.*;
+
+class GFG {
+    public static void main(String args[]) throws IOException {
+        Scanner sc = new Scanner(System.in);
+        int t = Integer.parseInt(sc.nextLine());
+
+        while (t > 0) {
+            String s = sc.nextLine();
+            Solution ob = new Solution();
+            if (ob.sentencePalindrome(s))
+                System.out.println("true");
+            else
+                System.out.println("false");
+            t--;
+        }
+    }
+}
+// } Driver Code Ends
+
+
+class Solution {
+
+    public boolean sentencePalindrome(String s) {
+      String cleaned=s.toLowerCase().replaceAll("[^a-zA-Z0-9]","");
+      int end=cleaned.length()-1;
+      int start=0;
+      while(start<end){
+          if(cleaned.charAt(start)!=cleaned.charAt(end)){
+              return false;
+          }
+          start++;
+          end--;
+      }
+      return true;
+    }
+}
