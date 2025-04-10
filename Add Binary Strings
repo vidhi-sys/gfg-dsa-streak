@@ -1,0 +1,35 @@
+#User function Template for python3
+class Solution:
+	def addBinary(self, s1, s2):
+		res=""
+		carry=0
+		s1,s2=s1[::-1],s2[::-1]
+		for i in range (max(len(s1),len(s2))):
+		    digitA= ord(s1[i])-ord('0') if i<len(s1) else 0
+		    digitB =ord(s2[i])-ord('0') if i<len(s2) else 0
+		    total= digitA + digitB + carry
+		    char=str(total % 2)
+		    res=char+res
+		    carry=total//2
+	    if carry:
+		    res="1"+res
+		return res    
+		    
+
+
+#{ 
+ # Driver Code Starts
+#Initial Template for Python 3
+
+if __name__ == '__main__':
+    T = int(input())
+    for i in range(T):
+        a = input().strip()
+        b = input().strip()
+        ob = Solution()
+        answer = ob.addBinary(a, b)
+
+        print(answer)
+        print("~")
+
+# } Driver Code Ends
