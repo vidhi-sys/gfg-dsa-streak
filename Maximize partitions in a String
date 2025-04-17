@@ -1,0 +1,25 @@
+class Solution:
+    def maxPartitions(self , s):
+        # code here
+        last={char:idx for idx,char in enumerate(s)}
+        max_part=0
+        start=0
+        end=0
+        for i,char in enumerate(s):
+            end=max(end,last[char])
+            if i==end:
+                max_part+=1
+                start=i+1
+        return max_part
+#{ 
+ # Driver Code Starts
+if __name__ == '__main__':
+    tc = int(input())
+
+    for _ in range(tc):
+        s = input()
+        obj = Solution()
+        print(obj.maxPartitions(s))
+        print("~")
+
+# } Driver Code Ends
