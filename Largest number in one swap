@@ -1,0 +1,29 @@
+#User function Template for python3
+
+class Solution:
+    def largestSwap(self,s):
+        s=list(s)
+        for i in range(len(s)):
+            max_char=max(s[i:])
+            if max_char> s[i]:
+                j=len(s)-1-s[::-1].index(max_char)
+                s[i],s[j]=s[j],s[i]
+                return ''.join(s)
+        return ''.join(s)        
+        #code here
+
+
+#{ 
+ # Driver Code Starts
+#Initial Template for Python 3
+
+if __name__ == '__main__':
+    t = int(input())
+    for _ in range(t):
+        s = input()
+
+        ob = Solution()
+        print(ob.largestSwap(s))
+        print("~")
+
+# } Driver Code Ends
