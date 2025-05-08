@@ -1,0 +1,44 @@
+class Node{
+    int val;
+    Node left;
+    Node right;
+    Node(int val){
+        this.val=val;
+    }
+}
+class Main {
+     public static void print(Node root){
+         // print the tree via recursion
+            if(root==null){
+                return;
+            }
+            System.out.println(root.val);
+            print(root.left);
+            print(root.right);
+            
+        }
+    public static void main(String[] args) {
+        
+       
+        // creation of nodes
+       Node a=new Node(10);
+       Node b=new Node(20);
+       Node c=new Node(30);
+       Node d=new Node(40);
+       Node e=new Node(50);
+       Node f=new Node(60);
+       Node g=new Node(70);
+       // connecting nodes
+       a.left=b;
+       a.right=c;
+       b.left=d;
+       b.right=e;
+       c.left=f;
+       c.right=g;
+       // using the print fxn
+       print(a);
+       
+      
+            
+    }
+}
