@@ -1,0 +1,20 @@
+class Solution {
+    static int lis(int arr[]) {
+        ArrayList<Integer> lis= new ArrayList<>();
+        for (int num:arr){
+        int x=    Collections.binarySearch(lis,num);
+        if(x<0){
+            x=-x-1;
+        }
+        if(x==lis.size()){
+            lis.add(num);
+        }
+        else{
+            lis.set(x,num);
+        }
+            
+        } 
+        return lis.size();
+        
+    }
+}
